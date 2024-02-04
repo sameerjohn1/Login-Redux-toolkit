@@ -4,7 +4,7 @@ import axios from "axios";
 export const loginuser=createAsyncThunk(
     "user/loginUser",
     async(userCredentials)=>{
-        const request=await axios.post("http://localhost:5000/api/users/login",userCredentials)
+        const request=await axios.post("API",userCredentials)
         const response=await request.data
         localStorage.setItem("user",JSON.stringify(response))
         return response
